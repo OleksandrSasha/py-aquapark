@@ -7,7 +7,7 @@ class IntegerRange:
         self.max_amount = max_amount
 
     def __get__(self, instance: object, owner: type) -> None:
-        pass
+        return getattr(instance, self.protected_name)
 
     def __set__(self, instance: object, value: int) -> None:
         if not isinstance(value, int):
